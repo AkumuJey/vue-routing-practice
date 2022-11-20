@@ -2,12 +2,13 @@
   <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link :to="{ name: 'About' }">About</router-link>|
+      <router-link :to="{ name: 'Education' }">Education</router-link>|
       <router-link :to="{ name: 'Jobs' }">Jobs</router-link>
   </div>
-  <button @click="foward">Go Back</button>
-  <button @click="redirect">Redierect</button>
-  <button @click="back">Go Foward</button>
+  <button @click="back">Go Back</button>
+  <button @click="forward">Go Forward</button>
   <router-view/>
+  <button @click="redirect">Home</button>
 </template>
 <script>
 export default {
@@ -15,7 +16,7 @@ export default {
     redirect(){
       this.$router.push({name: 'Home'})
     },
-    foward(){
+    forward(){
       this.$router.go(1)
     },
     back(){
